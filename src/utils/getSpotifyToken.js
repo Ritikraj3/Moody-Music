@@ -1,5 +1,5 @@
 export const getSpotifyToken = async () => {
-  const response = await fetch("/api/spotify");
+  const response = await fetch("/api/server");
   const data = await response.json();
 
   if (!response.ok) {

@@ -1,10 +1,10 @@
+// api/server.js
 import axios from 'axios';
 
 export default async function handler(req, res) {
-  const clientId = process.env.SPOTIFY_CLIENT_ID;
-  const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-
-  const token = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+  const token = Buffer.from(
+    `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
+  ).toString('base64');
 
   try {
     const response = await axios.post(
